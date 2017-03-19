@@ -22,7 +22,7 @@ You can find here modules for `users` , `sections` , `articles` , `comments`
 
 ## Screen capture
 
-[![Start Laravel](https://i.ytimg.com/vi/xH4Y3zxhO98/hqdefault.jpg?custom=true&w=196&h=110&stc=true&jpg444=true&jpgq=90&sp=68&sigh=0yXGfi8vvL--fZRxrc9ZvvPkzuk)](https://youtu.be/xH4Y3zxhO98)
+[![Start Laravel](https://media.giphy.com/media/lq8vHqyDtmZ5m/giphy.gif)](https://youtu.be/xH4Y3zxhO98)
 
 ## Contributing
 
