@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ArticleCreated;
 use App\Models\Article;
 use App\Http\Requests\ArticlesRequest;
 use App\Models\Section;
@@ -55,8 +56,9 @@ class ArticlesController extends Controller
         if (empty($data['published'])) {
             $data['published'] = 0;
         }
-        Article::create($data);
-        
+        $article = Article::create($data);
+        event(new ArticleCreated($article));
+
         return redirect('/articles')->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
     
