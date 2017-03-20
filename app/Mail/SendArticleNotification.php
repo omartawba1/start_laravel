@@ -39,6 +39,7 @@ class SendArticleNotification extends Mailable implements ShouldQueue
     {
         $article = $this->article;
         
-        return $this->view('emails.articles.new', compact('article'));
+        return $this->subject('New article added')
+                    ->view('emails.articles.new', compact('article'));
     }
 }
