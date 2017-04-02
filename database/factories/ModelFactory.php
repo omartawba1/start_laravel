@@ -29,6 +29,14 @@ $factory->define(App\Models\Section::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Models\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name'      => $faker->word,
+        'created_by' => 1,
+        'updated_by' => 1,
+    ];
+});
+
 $factory->define(App\Models\Article::class, function (Faker\Generator $faker) {
     return [
         'title'      => $faker->sentence(),

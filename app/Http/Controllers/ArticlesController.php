@@ -6,6 +6,7 @@ use App\Events\ArticleCreated;
 use App\Models\Article;
 use App\Http\Requests\ArticlesRequest;
 use App\Models\Section;
+use App\Models\Tag;
 
 class ArticlesController extends Controller
 {
@@ -39,8 +40,9 @@ class ArticlesController extends Controller
     public function create()
     {
         $sections = Section::pluck('title', 'id')->toArray();
+        $tags     = Tag::pluck('name', 'id')->toArray();
         
-        return view('articles.edit', compact('sections'));
+        return view('articles.edit', compact('sections', 'tags'));
     }
     
     /**
@@ -57,8 +59,9 @@ class ArticlesController extends Controller
             $data['published'] = 0;
         }
         $article = Article::create($data);
+        $article->tags()->sync(request('tags'));
         event(new ArticleCreated($article));
-
+        
         return redirect('/articles')->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
     
@@ -73,8 +76,9 @@ class ArticlesController extends Controller
     {
         $data     = Article::findOrFail($id);
         $sections = Section::pluck('title', 'id')->toArray();
+        $tags     = Tag::pluck('name', 'id')->toArray();
 
-        return view('articles.show', compact('data', 'sections'));
+        return view('articles.show', compact('data', 'sections', 'tags'));
     }
     
     /**
@@ -86,10 +90,11 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        $data     = Article::findOrFail($id);
+        $data     = Article::with('tags')->findOrFail($id);
         $sections = Section::pluck('title', 'id')->toArray();
-        
-        return view('articles.edit', compact('data', 'sections'));
+        $tags     = Tag::pluck('name', 'id')->toArray();
+
+        return view('articles.edit', compact('data', 'sections', 'tags'));
     }
     
     /**
@@ -106,8 +111,8 @@ class ArticlesController extends Controller
         if (empty($data['published'])) {
             $data['published'] = 0;
         }
-        $article->fill($data);
-        $article->save();
+        $article->fill($data)->save();
+        $article->tags()->sync(request('tags'));
         
         return redirect('/articles')->with(['msg' => trans('global.updated'), 'type' => 'success']);
     }

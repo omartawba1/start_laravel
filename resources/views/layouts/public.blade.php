@@ -21,7 +21,9 @@
     <!-- Custom Fonts -->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +48,7 @@
 @yield('content')
 @include('partials.footer')
 
-<!-- jQuery -->
+        <!-- jQuery -->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -61,6 +63,10 @@
 
 <!-- Theme JavaScript -->
 <script src="{{ asset('js/freelancer.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script type="text/javascript">
+    $('select').select2();
+</script>
 
 </body>
 

@@ -45,6 +45,12 @@
                         {{ Form::checkbox('published', 1, null, []) }}
                     </div>
                 </div>
+                <div class="form-group">
+                    {{ Form::label('tags', 'Tags', ['for'=>'tags', 'class'=>'col-sm-2', 'style'=>'text-align: left;']) }}
+                    <div class="col-sm-8">
+                        {{ Form::select('tags[]', $tags, $data->tags->pluck('id')->toArray(), ['class'=>'form-control select2', 'required', 'multiple']) }}
+                    </div>
+                </div>
                 <br>
                 <div id="success"></div>
                 <div class="row">

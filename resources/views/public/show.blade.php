@@ -15,6 +15,15 @@
                 </div>
             </div>
             <br>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h6>Tags:
+                        @foreach($article->tags as $tag)
+                            <span class="label label-default">{{ $tag->name }}</span>
+                        @endforeach
+                    </h6>
+                </div>
+            </div>
             <br>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -65,7 +74,7 @@
                                         <div class="col-sm-4">
                                             <img src="{{ url('img/profile.png') }}" style="height: 75px;">
                                             {{ $comment->user()->first()->name or 'Anonymous' }}
-                                            <br />on {{ $comment->created_at }}
+                                            <br/>on {{ $comment->created_at }}
                                         </div>
                                         <div class="col-sm-8">
                                             {{ $comment->text }}

@@ -21,6 +21,7 @@
                 @else
                     <li><a href="{{ url('/sections') }}">Sections</a></li>
                     <li><a href="{{ url('/articles') }}">Articles</a></li>
+                    <li><a href="{{ url('/tags') }}">Tags</a></li>
                     <li><a href="{{ url('/users') }}">Users</a></li>
                     <li>
                         {{ Form::open(['style'=>'margin-top: 15px;', 'id'=>'logoutForm', 'url'=>url('/logout')]) }}<a

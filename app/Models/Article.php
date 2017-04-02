@@ -29,6 +29,7 @@ class Article extends MainModel
     
     /**
      * Only return published articles
+     *
      * @param $query
      *
      * @return mixed
@@ -44,5 +45,13 @@ class Article extends MainModel
     public function user()
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

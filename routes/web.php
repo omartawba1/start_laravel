@@ -12,4 +12,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/articles', 'ArticlesController');
     Route::delete('/comments/{id}', 'CommentsController@destroy')->name('comments.destroy');
     Route::resource('/users', 'UsersController');
+    Route::resource('/tags', 'TagsController');
 });
