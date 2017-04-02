@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Users</h2>
+                <h2>{!! trans('users.heading') !!}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -20,15 +20,15 @@
             @endif
 
             <div class="panel panel-default">
-                <div class="panel-heading">Filter</div>
+                <div class="panel-heading">{!! trans('global.filter') !!}</div>
                 <div class="panel-body">
                     {{ Form::open(['url'=>url('/users'), 'method'=>'get', 'class'=>'form-inline']) }}
                     <div class="form-group">
-                        {{ Form::label('name', 'Name', ['for'=>'name']) }}
-                        {{ Form::text('name', request('name'), ['class'=>'form-control', 'placeholder'=>'Name']) }}
-                        {{ Form::label('email', 'Email', ['for'=>'email']) }}
-                        {{ Form::text('email', request('email'), ['class'=>'form-control', 'placeholder'=>'Email']) }}
-                        {{ Form::submit('filter', ['class'=>'btn btn-primary']) }}
+                        {{ Form::label('name', trans('users.attributes.name'), ['for'=>'name']) }}
+                        {{ Form::text('name', request('name'), ['class'=>'form-control', 'placeholder'=>trans('users.attributes.name')]) }}
+                        {{ Form::label('email', trans('users.attributes.email'), ['for'=>'email']) }}
+                        {{ Form::text('email', request('email'), ['class'=>'form-control', 'placeholder'=>trans('users.attributes.email')]) }}
+                        {{ Form::submit(trans('global.filter'), ['class'=>'btn btn-primary']) }}
                         {{ Form::close() }}
                     </div>
                 </div>
@@ -36,8 +36,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="{{ url('/users/create') }}"
-                       class="btn btn-success pull-right">Add new</a>
-                    <h5>Users</h5>
+                       class="btn btn-success pull-right">{!! trans('global.new') !!}</a>
+                    <h5>{{ trans('users.heading') }}</h5>
                 </div>
 
                 <div class="panel-body">
@@ -45,9 +45,9 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th>{!! trans('users.attributes.name') !!}</th>
+                            <th>{!! trans('users.attributes.email') !!}</th>
+                            <th>{!! trans('global.actions') !!}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -62,9 +62,10 @@
                                     <td>{{ $single->name }}</td>
                                     <td>{{ $single->email }}</td>
                                     <td>
-                                        <a href="{{ route('users.show', $single) }}" class="btn btn-default"> view</a>
+                                        <a href="{{ route('users.show', $single) }}"
+                                           class="btn btn-default"> {!! trans('global.view') !!}</a>
                                         <a href="{{ route('users.edit', $single) }} " class="btn btn-primary">
-                                            Edit</a>
+                                            {!! trans('global.edit') !!}</a>
                                     </td>
                                 </tr>
                             @endforeach

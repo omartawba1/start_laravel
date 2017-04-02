@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Reset Password</h2>
+                <h2>{{ trans('passwords.reset_text') }}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -29,9 +29,9 @@
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email">E-Mail Address</label>
+                            <label for="email">{{ trans('passwords.email') }}</label>
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                   placeholder="E-mail Address" required>
+                                   placeholder="{{ trans('passwords.email') }}" required>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            {{ Form::submit('Send Password Reset Link', ['class'=>'btn btn-success']) }}
+                            {{ Form::submit(trans('passwords.send_text'), ['class'=>'btn btn-success']) }}
                         </div>
                     </div>
                 </form>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Register</h2>
+                <h2>{{ trans('auth.register') }}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -24,8 +24,8 @@
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name">Name</label>
-                            <input placeholder="Name" id="name" type="text" class="form-control" name="name"
+                            <label for="name">{{ trans('auth.name') }}</label>
+                            <input placeholder="{{ trans('auth.name') }}" id="name" type="text" class="form-control" name="name"
                                    value="{{ old('name') }}"
                                    required autofocus>
                         </div>
@@ -33,25 +33,25 @@
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email">E-Mail Address</label>
+                            <label for="email">{{ trans('passwords.email') }}</label>
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                   placeholder="E-mail Address" required>
+                                   placeholder="{{ trans('passwords.email') }}" required>
                         </div>
                     </div>
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password">Password</label>
+                            <label for="password">{{ trans('passwords.password_text') }}</label>
 
-                            <input placeholder="Password" id="password" type="password" class="form-control" name="password"
+                            <input placeholder="{{ trans('passwords.password_text') }}" id="password" type="password" class="form-control" name="password"
                                    required>
                         </div>
                     </div>
 
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label for="password-confirm">Confirm Password</label>
-                            <input placeholder="Password" id="password-confirm" type="password" class="form-control"
+                            <label for="password-confirm">{{ trans('passwords.password_text_confirmation') }}</label>
+                            <input placeholder="{{ trans('passwords.password_text_confirmation') }}" id="password-confirm" type="password" class="form-control"
                                    name="password_confirmation" required>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            {{ Form::submit('Register', ['class'=>'btn btn-success']) }}
+                            {{ Form::submit(trans('auth.register'), ['class'=>'btn btn-success']) }}
                         </div>
                     </div>
                 </form>

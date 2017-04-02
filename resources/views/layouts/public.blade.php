@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel - Start Learning Laravel</title>
+    <title>{{ trans('global.title') }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -41,33 +41,27 @@
 </head>
 
 <body id="page-top" class="index">
-<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+<div id="skipnav"><a href="#maincontent">{{ trans('global.skip') }}</a></div>
 
 @include('partials.menu')
 @include('partials.header')
 @yield('content')
 @include('partials.footer')
-
-        <!-- jQuery -->
+<!-- jQuery -->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
 <!-- Contact Form JavaScript -->
 <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
 <script src="{{ asset('js/contact_me.js') }}"></script>
-
 <!-- Theme JavaScript -->
 <script src="{{ asset('js/freelancer.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script type="text/javascript">
     $('select').select2();
 </script>
-
 </body>
 
 </html>

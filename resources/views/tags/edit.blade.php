@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Tags</h2>
+                <h2>{!! trans('tags.heading') !!}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -25,15 +25,15 @@
             @endif
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    {{ Form::label('name', 'Name', ['for'=>'title']) }}
-                    {{ Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Name', 'required']) }}
+                    {{ Form::label('name', trans('tags.attributes.name'), ['for'=>'name']) }}
+                    {{ Form::text('name', null, ['class'=>'form-control', 'placeholder'=>trans('tags.attributes.name'), 'required']) }}
                 </div>
             </div>
             <br>
             <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    {{ Form::submit('Save', ['class'=>'btn btn-success']) }}
+                    {{ Form::submit(trans('global.save'), ['class'=>'btn btn-success']) }}
                 </div>
             </div>
             {{ Form::close() }}

@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Latest Articles</h2>
+                    <h2>{!! trans('articles.latest') !!}</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -16,7 +16,7 @@
                             {{ $single->title }}
                         </a>
                         <p>{{ substr($single->text, 0, 200). '...' }}</p>
-                        <a href="{{ route('public.show', $single) }}" class="btn btn-success">Read more...</a>
+                        <a href="{{ route('public.show', $single) }}" class="btn btn-success">{!! trans('global.read_more') !!}</a>
                     </div>
                 @endforeach
             </div>

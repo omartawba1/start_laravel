@@ -17,7 +17,7 @@
             <br>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h6>Tags:
+                    <h6>{!! trans('tags.heading') !!}:
                         @foreach($article->tags as $tag)
                             <span class="label label-default">{{ $tag->name }}</span>
                         @endforeach
@@ -49,8 +49,8 @@
                         {{ Form::hidden('article_id', $article->id) }}
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="text">Your Comment Here !</label>
-                                {{ Form::textarea('text', null, ['rows'=>'5', 'data-validation-required-message'=>'Please enter a comment.','class'=>'form-control', 'placeholder'=>'Your Comment Here !', 'required']) }}
+                                <label for="text">{!! trans('comments.placeholder') !!}</label>
+                                {{ Form::textarea('text', null, ['rows'=>'5', 'data-validation-required-message'=>'Please enter a comment.','class'=>'form-control', 'placeholder'=>trans('comments.placeholder'), 'required']) }}
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -58,13 +58,14 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                {{ Form::submit('Publish your comment', ['class'=>'btn btn-success']) }}
+                                {{ Form::submit(trans('comments.publish'), ['class'=>'btn btn-success']) }}
                             </div>
                         </div>
                         {{ Form::close() }}
                     </div>
                     <div class="panel panel-default">
-                        <div class="panel-heading">Comments <b>({{ $article->comments()->count() }})</b> Comment</div>
+                        <div class="panel-heading">{!! trans('comments.heading') !!}
+                            <b>({{ $article->comments()->count() }})</b> {!! trans('comments.comment') !!}</div>
 
                         <div class="panel-body">
                             @if($article->comments()->count())
@@ -73,8 +74,8 @@
                                          style="margin:5px 0;border-bottom: 1px solid #2C3E50">
                                         <div class="col-sm-4">
                                             <img src="{{ url('img/profile.png') }}" style="height: 75px;">
-                                            {{ $comment->user()->first()->name or 'Anonymous' }}
-                                            <br/>on {{ $comment->created_at }}
+                                            {{ $comment->user()->first()->name or trans('global.anonymous') }}
+                                            <br/>{{ trans('global.on')." ".$comment->created_at }}
                                         </div>
                                         <div class="col-sm-8">
                                             {{ $comment->text }}
@@ -82,7 +83,7 @@
                                     </div>
                                 @endforeach
                             @else
-                                <p>Sorry! no comments yet</p>
+                                <p>{!! trans('comments.no_comments') !!}</p>
                             @endif
                         </div>
                     </div>

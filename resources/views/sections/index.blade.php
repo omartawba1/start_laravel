@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Sections</h2>
+                <h2>{!! trans('sections.heading') !!}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -19,13 +19,13 @@
             @endif
 
             <div class="panel panel-default">
-                <div class="panel-heading">Filter</div>
+                <div class="panel-heading">{!! trans('global.filter') !!}</div>
                 <div class="panel-body">
                     {{ Form::open(['url'=>url('/sections'), 'method'=>'get', 'class'=>'form-inline']) }}
                     <div class="form-group">
-                        {{ Form::label('title', 'Title', ['for'=>'title']) }}
-                        {{ Form::text('title', request('title'), ['class'=>'form-control', 'placeholder'=>'Title', 'required']) }}
-                        {{ Form::submit('filter', ['class'=>'btn btn-primary']) }}
+                        {{ Form::label('title', trans('sections.attributes.title'), ['for'=>'title']) }}
+                        {{ Form::text('title', request('title'), ['class'=>'form-control', 'placeholder'=>trans('sections.attributes.title'), 'required']) }}
+                        {{ Form::submit(trans('global.filter'), ['class'=>'btn btn-primary']) }}
                         {{ Form::close() }}
                     </div>
                 </div>
@@ -33,8 +33,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="{{ url('/sections/create') }}"
-                       class="btn btn-success pull-right">Add new</a>
-                    <h5>Sections</h5>
+                       class="btn btn-success pull-right">{!! trans('global.new') !!}</a>
+                    <h5>{!! trans('sections.heading') !!}</h5>
                 </div>
 
                 <div class="panel-body">
@@ -42,9 +42,9 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th># Articles</th>
-                            <th>Actions</th>
+                            <th>{!! trans('sections.attributes.title') !!}</th>
+                            <th># {!! trans('articles.heading') !!}</th>
+                            <th>{!! trans('global.actions') !!}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,11 +60,11 @@
                                     <td>{{ $single->articles()->count() }}</td>
                                     <td>
                                         <a href="{{ route('sections.show', $single) }}" class="btn btn-default">
-                                            view</a>
+                                            {!! trans('global.view') !!}</a>
                                         <a href="{{ route('sections.edit', $single) }} " class="btn btn-primary">
-                                            Edit</a>
+                                            {!! trans('global.edit') !!}</a>
                                         {{ Form::open(['route'=>['sections.destroy', $single], 'method'=>'delete', 'style'=>'display:inline-flex']) }}
-                                        {{ Form::submit('Delete', ['class'=>'btn btn-danger', 'style'=>'float:left']) }}
+                                        {{ Form::submit(trans('global.delete'), ['class'=>'btn btn-danger', 'style'=>'float:left']) }}
                                         {{Form::close()}}
                                     </td>
                                 </tr>

@@ -27,7 +27,7 @@ class ArticlesController extends Controller
         }
         
         $data     = $data->latest()->paginate(config('pagination.page_size'));
-        $sections = array_merge(['0' => 'All sections'], Section::pluck('title', 'id')->toArray());
+        $sections = array_merge(['0' => trans('articles.all_sections')], Section::pluck('title', 'id')->toArray());
         
         return view('articles.index', compact('data', 'sections'));
     }

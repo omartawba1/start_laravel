@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Sections</h2>
+                <h2>{!! trans('sections.heading') !!}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -12,8 +12,8 @@
             {{ Form::model($data, ['route'=> ['sections.update', $data], 'method'=>'patch', 'class'=>'form-horizontal']) }}
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    {{ Form::label('title', 'Title', ['for'=>'title']) }}
-                    {{ Form::text('title', null, ['class'=>'form-control', 'placeholder'=>'Title', 'required']) }}
+                    {{ Form::label('title', trans('sections.attributes.title'), ['for'=>'title']) }}
+                    {{ Form::text('title', null, ['class'=>'form-control', 'placeholder'=>trans('sections.attributes.title'), 'required']) }}
                 </div>
             </div>
             {{Form::close()}}

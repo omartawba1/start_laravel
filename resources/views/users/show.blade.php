@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Users</h2>
+                <h2>{!! trans('users.heading') !!}</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -12,14 +12,14 @@
             {{ Form::model($data, ['route'=> ['users.update', $data], 'method'=>'patch', 'class'=>'form-horizontal']) }}
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    {{ Form::label('name', 'Name', ['for'=>'name']) }}
-                    {{ Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Name', 'required']) }}
+                    {{ Form::label('name', trans('users.attributes.name'), ['for'=>'name']) }}
+                    {{ Form::text('name', null, ['class'=>'form-control', 'placeholder'=>trans('users.attributes.name'), 'required']) }}
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                    {{ Form::label('email', 'Email', ['for'=>'email']) }}
-                    {{ Form::text('email', null, ['class'=>'form-control', 'placeholder'=>'Email', 'required']) }}
+                    {{ Form::label('email', trans('users.attributes.email'), ['for'=>'email']) }}
+                    {{ Form::text('email', null, ['class'=>'form-control', 'placeholder'=>trans('users.attributes.email'), 'required']) }}
                 </div>
             </div>
             {{ Form::close() }}
