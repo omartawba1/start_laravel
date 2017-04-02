@@ -27,23 +27,8 @@
             <br>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    @if(count($errors))
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $single)
-                                    <li>{{ $single }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if (session('msg'))
-                        <div class="alert alert-{{ session()->pull('type') }}" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            {{ session()->pull('msg') }}
-                        </div>
-                    @endif
+                    @include('partials.errors')
+                    @include('partials.messages')
                     <div id="post-add-comment">
                         {{ Form::open(['url'=>url('/comments'), 'method'=>'post', 'name'=>'sendComment', 'id'=>'sendComment']) }}
                         {{ Form::hidden('article_id', $article->id) }}

@@ -10,15 +10,7 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                @if(count($errors))
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $single)
-                                <li>{{ $single }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                @include('partials.errors')
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
@@ -33,7 +25,8 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email">{{ trans('passwords.email') }}</label>
-                            <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}"
+                            <input id="email" type="email" class="form-control" name="email"
+                                   value="{{ $email or old('email') }}"
                                    placeholder="{{ trans('passwords.email') }}" required>
                         </div>
                     </div>
@@ -41,7 +34,8 @@
                         <div class="form-group col-xs-12 floating-label-form-group controls{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password">{{ trans('passwords.password_text') }}</label>
 
-                            <input placeholder="{{ trans('passwords.password_text') }}" id="password" type="password" class="form-control" name="password"
+                            <input placeholder="{{ trans('passwords.password_text') }}" id="password" type="password"
+                                   class="form-control" name="password"
                                    required>
                         </div>
                     </div>
@@ -49,7 +43,8 @@
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label for="password-confirm">{{ trans('passwords.password_text_confirmation') }}</label>
-                            <input placeholder="{{ trans('passwords.password_text_confirmation') }}" id="password-confirm" type="password" class="form-control"
+                            <input placeholder="{{ trans('passwords.password_text_confirmation') }}"
+                                   id="password-confirm" type="password" class="form-control"
                                    name="password_confirmation" required>
                         </div>
                     </div>

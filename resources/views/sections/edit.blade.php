@@ -9,15 +9,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            @if(count($errors))
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $single)
-                            <li>{{ $single }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            @include('partials.errors')
             @if(!empty($data))
                 {{ Form::model($data, ['route'=> ['sections.update', $data], 'method'=>'patch', 'class'=>'form-horizontal']) }}
             @else
