@@ -30,6 +30,33 @@ You can find here modules for `users` , `sections` , `articles` , `comments`
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_42.19_AM.png)](https://youtu.be/xH4Y3zxhO98)
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_42.40_AM.png)](https://youtu.be/xH4Y3zxhO98)
 
+# Installation Steps  
+
+First you will need to clone the project   
+
+Then you go to project directory and run     
+
+`composer install`  
+
+Then create a database named start_laravel then rename `.env.example` to `.env` and change database configuration values to yours.  
+
+Then run  
+
+`php artisan key:generate`  
+
+Then  
+
+`php artisan migrate`  
+
+Then seed users table  
+
+`php artisan db:seed`  
+
+## Default Login Data
+
+Email :`admin@admin.com`  
+Pass  :`123456`  
+
 ## Custom commands
 
     php artisan clear:db
