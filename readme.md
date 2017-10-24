@@ -52,6 +52,11 @@ Then seed users table
 
 `php artisan db:seed`  
 
+## Default Login Data
+
+Email :`admin@admin.com`  
+Pass  :`123456`  
+
 ## Custom commands
 
     php artisan clear:db
