@@ -38,7 +38,7 @@ Then you go to project directory and run
 
 `composer install`  
 
-Then create a database named akari then rename `.env.example` to `.env` and change database configuration values to yours.  
+Then create a database named start_laravel then rename `.env.example` to `.env` and change database configuration values to yours.  
 
 Then run  
 
