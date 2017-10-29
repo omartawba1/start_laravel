@@ -15,8 +15,16 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <!-- RTL Bootstrap Core CSS for arabic suppourt -->
+    @if (config('app.locale') == 'ar')
+    <!-- RTL Bootstrap Core CSS -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap-rtl.min.css') }}" rel="stylesheet">
+    <!-- RTL Theme CSS -->
+    <link href="{{ asset('css/freelancer-rtl.css') }}" rel="stylesheet">
+    @else
     <!-- Theme CSS -->
     <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
+    @endif
 
     <!-- Custom Fonts -->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">

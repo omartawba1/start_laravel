@@ -25,7 +25,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="{{ url('/tags/create') }}"
-                       class="btn btn-success pull-right">{!! trans('global.new') !!}</a>
+                       class="btn btn-success">{!! trans('global.new') !!}</a>
                     <h5>Tags</h5>
                 </div>
 

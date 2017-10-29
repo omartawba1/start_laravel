@@ -27,7 +27,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <a href="{{ url('/articles/create') }}"
-                       class="btn btn-success pull-right">{{ trans('global.new') }}</a>
+                       class="btn btn-success">{{ trans('global.new') }}</a>
                     <h5>{{ trans('articles.heading') }}</h5>
                 </div>
 

@@ -438,6 +438,7 @@ fieldset[disabled] .btn-primary.active {
     background-color: #18BC9C;
     border-color: #18BC9C;
     font-weight: 700;
+    float: right;
 }
 
 .btn-success:hover,
