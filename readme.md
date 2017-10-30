@@ -19,7 +19,8 @@ I hope it'll help you on understanding Laravel & how to work with it.
 
 ## Modules & Features
 
-You can find here modules for `users` , `sections` , `articles` , `comments`
+You can find here modules for `users` , `sections` , `articles` , `comments`  
+also you can some good features like `login` , `registration` , `translation` 
 
 ## Screen capture
 
