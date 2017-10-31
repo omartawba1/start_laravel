@@ -17,9 +17,10 @@ Each framework should has it's quick start app, Let this application be your qui
 It'll help you to build your app structure and show you each component of Laravel and how to best practice them.
 I hope it'll help you on understanding Laravel & how to work with it.
 
-## Modules
+## Modules & Features
 
-You can find here modules for `users` , `sections` , `articles` , `comments`
+You can find here modules for `users` , `sections` , `articles` , `comments`  
+also you can some good features like `login` , `registration` , `translation` 
 
 ## Screen capture
 
