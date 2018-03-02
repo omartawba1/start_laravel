@@ -1,13 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## Start Laravel
+## Start Laravel [![Build Status](https://travis-ci.org/omartawba1/start_laravel.svg?branch=master)](https://travis-ci.org/omartawba1/start_laravel)
 
 Start laravel is a simple start app to learn how to develop with laravel, You'll learn these components
 
@@ -31,7 +22,7 @@ also you can some good features like `login` , `registration` , `translation`
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_42.19_AM.png)](https://youtu.be/xH4Y3zxhO98)
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_42.40_AM.png)](https://youtu.be/xH4Y3zxhO98)
 
-# Installation Steps  
+## Installation Steps  
 
 First you will need to clone the project   
 
