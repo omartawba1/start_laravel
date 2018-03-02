@@ -18,3 +18,8 @@ services:
 cache:
   directories:
     - vendor
+
+test:
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
