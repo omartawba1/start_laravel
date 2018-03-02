@@ -1,4 +1,4 @@
-## Start Laravel [![Build Status](https://travis-ci.org/omartawba1/start_laravel.svg?branch=master)](https://travis-ci.org/omartawba1/start_laravel)
+## Start Laravel [![Build Status](https://travis-ci.org/omartawba1/start_laravel.svg?branch=master)](https://travis-ci.org/omartawba1/start_laravel) [![StyleCI](https://styleci.io/repos/85490276/shield?branch=master)](https://styleci.io/repos/85490276) 
 
 Start laravel is a simple start app to learn how to develop with laravel, You'll learn these components
 
