@@ -10,14 +10,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class SendArticleNotification extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
-    
+
     /**
-     * The article object
+     * The article object.
      *
-     * @var $article
+     * @var
      */
     private $article;
-    
+
     /**
      * Create a new message instance.
      *
@@ -29,7 +29,7 @@ class SendArticleNotification extends Mailable implements ShouldQueue
     {
         $this->article = $article;
     }
-    
+
     /**
      * Build the message.
      *
@@ -38,7 +38,7 @@ class SendArticleNotification extends Mailable implements ShouldQueue
     public function build()
     {
         $article = $this->article;
-        
+
         return $this->subject('New article added')
                     ->view('emails.articles.new', compact('article'));
     }

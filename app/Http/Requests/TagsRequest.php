@@ -15,7 +15,7 @@ class TagsRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -27,7 +27,7 @@ class TagsRequest extends FormRequest
             'name' => 'required|string|min:3',
         ];
     }
-    
+
     /**
      * Get custom attributes for validator errors.
      *

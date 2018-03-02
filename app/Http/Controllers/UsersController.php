@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UsersRequest;
 use App\Models\User;
-use App\Notifications\NewUserNotification;
 use Illuminate\Http\Request;
-use Mail;
+use App\Http\Requests\UsersRequest;
 use Illuminate\Support\Facades\Password;
+use App\Notifications\NewUserNotification;
 
 class UsersController extends Controller
 {
@@ -20,16 +19,16 @@ class UsersController extends Controller
     {
         $data = new User();
         if (request('name')) {
-            $data = $data->where('name', 'LIKE', '%' . request('title') . '%');
+            $data = $data->where('name', 'LIKE', '%'.request('title').'%');
         }
         if (request('email')) {
-            $data = $data->where('email', 'LIKE', '%' . request('email') . '%');
+            $data = $data->where('email', 'LIKE', '%'.request('email').'%');
         }
         $data = $data->latest()->paginate(config('pagination.page_size'));
-        
+
         return view('users.index', compact('data'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +38,7 @@ class UsersController extends Controller
     {
         return view('users.edit');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -49,16 +48,16 @@ class UsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-        $data             = $request->only(array_keys($request->rules()));
-        $data['password'] = "";
-        $user             = User::create($data);
-        
+        $data = $request->only(array_keys($request->rules()));
+        $data['password'] = '';
+        $user = User::create($data);
+
         $token = Password::getRepository()->create($user);
         $user->notify(new NewUserNotification($token));
 
         return redirect('/users')->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -69,10 +68,10 @@ class UsersController extends Controller
     public function show($id)
     {
         $data = User::findOrFail($id);
-        
+
         return view('users.show', compact('data'));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -83,10 +82,10 @@ class UsersController extends Controller
     public function edit($id)
     {
         $data = User::findOrFail($id);
-        
+
         return view('users.edit', compact('data'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,10 +99,10 @@ class UsersController extends Controller
         $data = $request->only('name');
         $user->fill($data);
         $user->save();
-        
+
         return redirect('/users')->with(['msg' => trans('global.updated'), 'type' => 'success']);
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *

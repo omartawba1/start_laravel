@@ -24,6 +24,7 @@ class Locale
             session()->put('locale', config('app.locale'));
             app()->setLocale(config('app.locale'));
         }
+
         return $next($request);
     }
 }

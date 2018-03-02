@@ -4,7 +4,6 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class NewUserNotification extends Notification
@@ -12,9 +11,9 @@ class NewUserNotification extends Notification
     use Queueable;
 
     /**
-     * The reset password token
+     * The reset password token.
      *
-     * @var $token
+     * @var
      */
     private $token;
 

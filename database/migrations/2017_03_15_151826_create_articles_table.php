@@ -26,7 +26,7 @@ class CreateArticlesTable extends Migration
             $table->softDeletes();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TagsRequest;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\Http\Requests\TagsRequest;
 
 class TagsController extends Controller
 {
@@ -17,13 +17,13 @@ class TagsController extends Controller
     {
         $data = new Tag();
         if (request('name')) {
-            $data = $data->where('name', 'LIKE', '%' . request('name') . '%');
+            $data = $data->where('name', 'LIKE', '%'.request('name').'%');
         }
         $data = $data->latest()->paginate(config('pagination.page_size'));
-        
+
         return view('tags.index', compact('data'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +33,7 @@ class TagsController extends Controller
     {
         return view('tags.edit');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,10 +45,10 @@ class TagsController extends Controller
     {
         $data = $request->only(array_keys($request->rules()));
         Tag::create($data);
-        
+
         return redirect('/tags')->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -62,7 +62,7 @@ class TagsController extends Controller
 
         return view('tags.show', compact('data'));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,7 +76,7 @@ class TagsController extends Controller
 
         return view('tags.edit', compact('data'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -92,7 +92,7 @@ class TagsController extends Controller
 
         return redirect('/tags')->with(['msg' => trans('global.updated'), 'type' => 'success']);
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -107,7 +107,7 @@ class TagsController extends Controller
             return redirect()->back()->with(['msg' => trans('global.cannot_delete'), 'type' => 'danger']);
         }
         $tag->delete();
-        
+
         return redirect()->back()->with(['msg' => trans('global.deleted'), 'type' => 'success']);
     }
 }

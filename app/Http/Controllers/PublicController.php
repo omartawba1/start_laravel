@@ -7,7 +7,7 @@ use App\Models\Article;
 class PublicController extends Controller
 {
     /**
-     * Show the latest articles to the public access
+     * Show the latest articles to the public access.
      *
      * @return \Illuminate\Http\Response
      */
@@ -17,7 +17,7 @@ class PublicController extends Controller
 
         return view('public.index', compact('articles'));
     }
-    
+
     /**
      * Display the specified resource.
      *

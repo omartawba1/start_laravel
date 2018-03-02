@@ -10,7 +10,7 @@ class Comment extends MainModel
      * @var array
      */
     protected $fillable = ['text', 'article_id'];
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -18,7 +18,7 @@ class Comment extends MainModel
     {
         return $this->belongsTo(Article::class);
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\ArticleCreated;
-use App\Models\Article;
-use App\Http\Requests\ArticlesRequest;
-use App\Models\Section;
 use App\Models\Tag;
+use App\Models\Article;
+use App\Models\Section;
+use App\Events\ArticleCreated;
+use App\Http\Requests\ArticlesRequest;
 
 class ArticlesController extends Controller
 {
@@ -18,20 +18,20 @@ class ArticlesController extends Controller
     public function index()
     {
         $data = new Article();
-        
+
         if (request('title')) {
-            $data = $data->where('title', 'LIKE', '%' . request('title') . '%');
+            $data = $data->where('title', 'LIKE', '%'.request('title').'%');
         }
         if (request('section_id')) {
             $data = $data->where('section_id', request('section_id'));
         }
-        
-        $data     = $data->latest()->paginate(config('pagination.page_size'));
+
+        $data = $data->latest()->paginate(config('pagination.page_size'));
         $sections = array_merge(['0' => trans('articles.all_sections')], Section::pluck('title', 'id')->toArray());
-        
+
         return view('articles.index', compact('data', 'sections'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -40,11 +40,11 @@ class ArticlesController extends Controller
     public function create()
     {
         $sections = Section::pluck('title', 'id')->toArray();
-        $tags     = Tag::pluck('name', 'id')->toArray();
-        
+        $tags = Tag::pluck('name', 'id')->toArray();
+
         return view('articles.edit', compact('sections', 'tags'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -61,10 +61,10 @@ class ArticlesController extends Controller
         $article = Article::create($data);
         $article->tags()->sync(request('tags'));
         event(new ArticleCreated($article));
-        
+
         return redirect('/articles')->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -74,13 +74,13 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $data     = Article::findOrFail($id);
+        $data = Article::findOrFail($id);
         $sections = Section::pluck('title', 'id')->toArray();
-        $tags     = Tag::pluck('name', 'id')->toArray();
+        $tags = Tag::pluck('name', 'id')->toArray();
 
         return view('articles.show', compact('data', 'sections', 'tags'));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,13 +90,13 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        $data     = Article::with('tags')->findOrFail($id);
+        $data = Article::with('tags')->findOrFail($id);
         $sections = Section::pluck('title', 'id')->toArray();
-        $tags     = Tag::pluck('name', 'id')->toArray();
+        $tags = Tag::pluck('name', 'id')->toArray();
 
         return view('articles.edit', compact('data', 'sections', 'tags'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -113,10 +113,10 @@ class ArticlesController extends Controller
         }
         $article->fill($data)->save();
         $article->tags()->sync(request('tags'));
-        
+
         return redirect('/articles')->with(['msg' => trans('global.updated'), 'type' => 'success']);
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -127,7 +127,7 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         Article::findOrFail($id)->delete();
-        
+
         return redirect()->back()->with(['msg' => trans('global.deleted'), 'type' => 'success']);
     }
 }
