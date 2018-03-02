@@ -15,7 +15,7 @@ class CommentsRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -28,7 +28,7 @@ class CommentsRequest extends FormRequest
             'article_id' => 'required|exists:articles,id',
         ];
     }
-    
+
     /**
      * Get custom attributes for validator errors.
      *

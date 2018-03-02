@@ -15,7 +15,7 @@ class UsersRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,11 +25,11 @@ class UsersRequest extends FormRequest
     {
         return [
             'name'     => 'required|min:3',
-            'email'    => 'required|sometimes|email|unique:users,email,' . auth()->id() . ',id',
+            'email'    => 'required|sometimes|email|unique:users,email,'.auth()->id().',id',
             'password' => 'sometimes',
         ];
     }
-    
+
     /**
      * Get custom attributes for validator errors.
      *

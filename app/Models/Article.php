@@ -10,7 +10,7 @@ class Article extends MainModel
      * @var array
      */
     protected $fillable = ['title', 'text', 'section_id', 'published', 'views'];
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -26,9 +26,9 @@ class Article extends MainModel
     {
         return $this->hasMany(Comment::class);
     }
-    
+
     /**
-     * Only return published articles
+     * Only return published articles.
      *
      * @param $query
      *

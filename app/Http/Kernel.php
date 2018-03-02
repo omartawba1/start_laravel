@@ -26,7 +26,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\VerifyCsrfToken::class,
         Locale::class,
     ];
-    
+
     /**
      * The application's route middleware groups.
      *
@@ -39,13 +39,13 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        
+
         'api' => [
             'throttle:60,1',
             'bindings',
         ],
     ];
-    
+
     /**
      * The application's route middleware.
      *

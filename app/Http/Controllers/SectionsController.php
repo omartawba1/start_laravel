@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SectionsRequest;
 use App\Models\Section;
+use App\Http\Requests\SectionsRequest;
 
 class SectionsController extends Controller
 {
@@ -16,13 +16,13 @@ class SectionsController extends Controller
     {
         $data = new Section();
         if (request('title')) {
-            $data = $data->where('title', 'LIKE', '%' . request('title') . '%');
+            $data = $data->where('title', 'LIKE', '%'.request('title').'%');
         }
         $data = $data->latest()->paginate(config('pagination.page_size'));
-        
+
         return view('sections.index', compact('data'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +32,7 @@ class SectionsController extends Controller
     {
         return view('sections.edit');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,10 +44,10 @@ class SectionsController extends Controller
     {
         $data = $request->only(array_keys($request->rules()));
         Section::create($data);
-        
+
         return redirect('/sections')->with(['msg'=> trans('global.added'), 'type'=>'success']);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -58,10 +58,10 @@ class SectionsController extends Controller
     public function show($id)
     {
         $data = Section::findOrFail($id);
-        
+
         return view('sections.show', compact('data'));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -72,10 +72,10 @@ class SectionsController extends Controller
     public function edit($id)
     {
         $data = Section::findOrFail($id);
-        
+
         return view('sections.edit', compact('data'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -89,10 +89,10 @@ class SectionsController extends Controller
         $data = $request->only(array_keys($request->rules()));
         $section->fill($data);
         $section->save();
-        
+
         return redirect('/sections')->with(['msg'=> trans('global.updated'), 'type'=>'success']);
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -107,7 +107,7 @@ class SectionsController extends Controller
             return redirect()->back()->with(['msg'=> trans('global.cannot_delete'), 'type'=>'danger']);
         }
         $data->delete();
-        
+
         return redirect()->back()->with(['msg'=> trans('global.deleted'), 'type'=>'success']);
     }
 }

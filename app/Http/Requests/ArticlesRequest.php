@@ -15,7 +15,7 @@ class ArticlesRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -30,7 +30,7 @@ class ArticlesRequest extends FormRequest
             'published'  => 'in:0,1',
         ];
     }
-    
+
     /**
      * Get custom attributes for validator errors.
      *

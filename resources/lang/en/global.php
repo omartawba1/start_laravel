@@ -19,7 +19,7 @@ return [
     'title'            => 'Laravel - Start Learning Laravel',
     'skip'             => 'Skip to main content',
     'location'         => 'Location',
-    'address'          => "3481 Melrose Place <br>Beverly Hills, CA 90210",
+    'address'          => '3481 Melrose Place <br>Beverly Hills, CA 90210',
     'around_web'       => 'Around the Web',
     'facebook'         => 'Facebook',
     'google'           => 'Google',
@@ -45,8 +45,8 @@ return [
                             <p>Learning laravel is a demo for Laravel was built on Laravel 5.4 . 
                             Here you'll find anything for learning laravel like 
                             Controllers, Models, Commands, Routing, ..etc</p>",
-    'dashboard_intro1' => "The main target from developing this demo is to be a quick start for 
-                           any Laravel beginner to speed the process of learning Laravel.",
+    'dashboard_intro1' => 'The main target from developing this demo is to be a quick start for 
+                           any Laravel beginner to speed the process of learning Laravel.',
     'dashboard_about'  => '<p>This made by <a href="https://www.linkedin.com/in/omar-tawba-8765425b" target="_blank"> Omar
                            Zaki </a> using <a href="http://startbootstrap.com">Freelance</a> HTML template</p>',
     ''                 => '',

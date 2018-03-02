@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class HomeController extends Controller
@@ -17,7 +15,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth')->except('changeLocal');
     }
-    
+
     /**
      * Show the application dashboard.
      *
@@ -27,9 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    
+
     /**
-     * Changing the app language
+     * Changing the app language.
      *
      * @param $lang
      *

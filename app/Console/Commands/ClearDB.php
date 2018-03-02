@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Comment;
 use App\Models\Section;
-use App\Models\User;
 use Illuminate\Console\Command;
 
 class ClearDB extends Command
@@ -16,14 +16,14 @@ class ClearDB extends Command
      * @var string
      */
     protected $signature = 'clear:db';
-    
+
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'You can clear all of the data from the DB from Here';
-    
+
     /**
      * Create a new command instance.
      *
@@ -33,7 +33,7 @@ class ClearDB extends Command
     {
         parent::__construct();
     }
-    
+
     /**
      * Execute the console command.
      *
@@ -45,6 +45,7 @@ class ClearDB extends Command
         Article::truncate();
         Section::truncate();
         User::truncate();
+
         return $this->info('You have clean DB right now');
     }
 }

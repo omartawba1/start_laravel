@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CommentsRequest;
 use App\Models\Comment;
+use App\Http\Requests\CommentsRequest;
 use App\Notifications\NewCommentNotification;
-use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
@@ -18,14 +17,14 @@ class CommentsController extends Controller
      */
     public function store(CommentsRequest $request)
     {
-        $data    = $request->only(array_keys($request->rules()));
+        $data = $request->only(array_keys($request->rules()));
         $comment = Comment::create($data);
-        $user    = $comment->article()->firstOrFail()->user()->firstOrFail();
+        $user = $comment->article()->firstOrFail()->user()->firstOrFail();
         $user->notify(new NewCommentNotification($comment->article()->first()));
 
         return redirect()->back()->with(['msg' => trans('global.added'), 'type' => 'success']);
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -36,7 +35,7 @@ class CommentsController extends Controller
     public function destroy($id)
     {
         Comment::findOrFail($id)->delete();
-        
+
         return redirect()->back()->with(['msg' => trans('global.deleted'), 'type' => 'success']);
     }
 

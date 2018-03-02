@@ -19,7 +19,7 @@ return [
     'title'            => 'Laravel - Start Learning Laravel',
     'skip'             => 'Ga naar hoofdinhoud',
     'location'         => 'Plaats',
-    'address'          => "3481 Melrose Place <br>Beverly Hills, CA 90210",
+    'address'          => '3481 Melrose Place <br>Beverly Hills, CA 90210',
     'around_web'       => 'Around the Web',
     'facebook'         => 'Facebook',
     'google'           => 'Google',
@@ -41,12 +41,12 @@ return [
     'read_more'        => 'Lees verder...',
     'on'               => 'op',
     'dashboard'        => 'Dashboard',
-    'dashboard_intro'  => "<p>Als u een snelle start van Laravel nodig heeft, zal dit u helpen</p>
+    'dashboard_intro'  => '<p>Als u een snelle start van Laravel nodig heeft, zal dit u helpen</p>
                             <p>Leren laravel is een demo voor Laravel werd gebouwd op Laravel 5.4.
                              Hier vindt u alles voor het leren vinden laravel graag
-                             Controllers, modellen, Commands, Routing, .etc</p>",
-    'dashboard_intro1' => "De belangrijkste doelstelling van het ontwikkelen van deze demo is om een snelle start voor zijn
-                            elke Laravel beginner tot het proces van leren Laravel versnellen.",
+                             Controllers, modellen, Commands, Routing, .etc</p>',
+    'dashboard_intro1' => 'De belangrijkste doelstelling van het ontwikkelen van deze demo is om een snelle start voor zijn
+                            elke Laravel beginner tot het proces van leren Laravel versnellen.',
     'dashboard_about'  => '<p>Dit maakte door <a href="https://www.linkedin.com/in/omar-tawba-8765425b" target="_blank"> Omar
                            Zaki </a> gebruik makend van <a href="http://startbootstrap.com">Freelance</a> HTML sjabloon</p>',
     ''                 => '',

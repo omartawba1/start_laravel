@@ -17,7 +17,7 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\NotifyUsers',
         ],
     ];
-    
+
     /**
      * Register any events for your application.
      *
@@ -26,7 +26,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-        
+
         //
     }
 }
