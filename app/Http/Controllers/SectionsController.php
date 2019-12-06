@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Section;
 use App\Http\Requests\SectionsRequest;
+use App\Models\Section;
 
 class SectionsController extends Controller
 {

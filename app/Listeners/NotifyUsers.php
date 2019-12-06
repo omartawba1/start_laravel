@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use Mail;
-use App\Models\User;
 use App\Events\ArticleCreated;
 use App\Mail\SendArticleNotification;
+use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Mail;
 
 class NotifyUsers implements ShouldQueue
 {
