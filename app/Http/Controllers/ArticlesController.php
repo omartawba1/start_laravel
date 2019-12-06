@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
-use App\Models\Article;
-use App\Models\Section;
 use App\Events\ArticleCreated;
 use App\Http\Requests\ArticlesRequest;
+use App\Models\Article;
+use App\Models\Section;
+use App\Models\Tag;
 
 class ArticlesController extends Controller
 {

@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
 use App\Models\Article;
 use App\Models\Comment;
 use App\Models\Section;
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class ClearDB extends Command

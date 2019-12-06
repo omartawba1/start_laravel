@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Http\Requests\CommentsRequest;
+use App\Models\Comment;
 use App\Notifications\NewCommentNotification;
 
 class CommentsController extends Controller
