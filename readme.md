@@ -15,7 +15,6 @@ also you can some good features like `login` , `registration` , `translation`
 
 ## Screen capture
 
-[![Start Laravel](https://media.giphy.com/media/lq8vHqyDtmZ5m/giphy.gif)](https://youtu.be/xH4Y3zxhO98)
 [![Start Laravel](https://image.ibb.co/mTX68v/Screen_Shot_2017_03_20_at_10_41_14_AM.png)](https://youtu.be/xH4Y3zxhO98)
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_41_32_AM.png)](https://youtu.be/xH4Y3zxhO98)
 [![Start Laravel](https://image.ibb.co/iVJeTv/Screen_Shot_2017_03_20_at_10_41_53_AM.png)](https://youtu.be/xH4Y3zxhO98)
