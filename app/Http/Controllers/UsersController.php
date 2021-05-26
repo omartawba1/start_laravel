@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UsersRequest;
 use App\Models\User;
 use App\Notifications\NewUserNotification;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
 class UsersController extends Controller
